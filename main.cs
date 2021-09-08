@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace FirstConsoleProject{
 
@@ -6,27 +7,14 @@ class MainClass
 {
   public static void Main (string[] args) 
 	{
-		KeyValuePair<string, int> meaning = new KeyValuePair<string, int> ("Life", 42);
+		Dictionary<string, int> prices = new(5);
+			prices.Add("Watermelon", 5);
+			prices.Add("Car", 1000000);
+			prices.Add("Sword", 50000);
+      
+			Console.WriteLine(prices["Watermelon"]); 
 
-		meaning.Print();
-
-		Console.ReadKey();
+			Console.ReadKey();
   }
-}
-class KeyValuePair<TKey, TValue>
-{
-	public TKey key;
-	public TValue value;
-	public  KeyValuePair(TKey _key, TValue _value)
-	{
-		key = _key;
-		value = _value;
-	}
-	
-	public void Print()
-	{
-		Console.WriteLine("Key:" + key.ToString());
-		Console.WriteLine("Value:" + value.ToString());
-	}
 }
 }
